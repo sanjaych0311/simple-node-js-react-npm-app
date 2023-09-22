@@ -38,7 +38,7 @@ pipeline {
             emailext (
                 subject: "Unit Tests Failed",
                 body: "The unit tests have failed. Please investigate.",
-                to: “sanjaych0311@gmail.com"
+                to: "sanjaych0311@gmail.com"  // Replace with the correct email address
             )
         }
     }

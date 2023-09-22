@@ -14,9 +14,14 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Test') {
+        stage('Tests') {
             steps {
-                sh './jenkins/scripts/test.sh'
+                sh './jenkins/scripts/test.sh'  // Replace with your unit test command
+            }
+            post {
+                always {
+                    junit '/Users/ch20247624/Documents/GitHub/simple-node-js-react-npm-app/test-results.xml'  // Specify the path to your unit test result XML
+                }
             }
         }
         stage('Deliver') {
@@ -27,4 +32,15 @@ pipeline {
             }
         }
     }
+    post {
+        failure {
+            // Notify team on test failure
+            emailext (
+                subject: "Unit Tests Failed",
+                body: "The unit tests have failed. Please investigate.",
+                to: “sanjaych0311@gmail.com"
+            )
+        }
+    }
 }
+

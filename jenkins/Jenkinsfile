@@ -18,11 +18,7 @@ pipeline {
             steps {
                 sh './jenkins/scripts/test.sh'  // Replace with your unit test command
             }
-            post {
-                always {
-                    junit '/Users/ch20247624/Documents/GitHub/simple-node-js-react-npm-app/test-results.xml'  // Specify the path to your unit test result XML
-                }
-            }
+            
         }
         stage('Deliver') {
             steps {

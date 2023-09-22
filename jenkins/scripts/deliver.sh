@@ -24,6 +24,8 @@ echo $! > .pidfile
 set +x
 
 echo 'Now...'
+<<<<<<< HEAD
 echo 'Visit http://localhost:3004 to see your Node.js/React application in action.'
-echo '(This is why you specified the "args ''-p 3004:3000''" parameter when you'
+echo '(This is why you specified the "args ''-p 3000:3000''" parameter when you'
+>>>>>>> e9032df788e8144985835a0b279a63310078c243
 echo 'created your initial Pipeline as a Jenkinsfile.)'
